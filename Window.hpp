@@ -1,5 +1,5 @@
 #pragma once
-#include "main.hpp"
+#include "Main.hpp"
 
 extern std::vector<pcl::PointCloud<pcl::PointXYZ>::Ptr> inputCloud;
 
@@ -77,7 +77,7 @@ class Window {
   static void drop_callback(GLFWwindow *window, int count, const char **paths) {
     std::cout << paths[0] << std::endl;
     std::string path = std::string(paths[0]);
-    LoadPCDFile(path);
+    loadPCDFile(path);
   }
 
   void swapBuffers() {

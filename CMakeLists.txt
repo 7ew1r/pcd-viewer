@@ -1,6 +1,6 @@
-project( main )
+project( PCD_Viewer )
 cmake_minimum_required( VERSION 2.8 )
-add_executable(${PROJECT_NAME} main.cpp PCL.cpp )
+add_executable(${PROJECT_NAME} Main.cpp PCL.cpp )
 
 find_package( OpenGL )
 find_package( OpenGL REQUIRED )
@@ -28,4 +28,4 @@ IF( APPLE )
     SET( EXTRA_LIBS ${COCOA_LIBRARY} ${OpenGL_LIBRARY} ${IOKIT_LIBRARY} ${COREVIDEO_LIBRARY} )
 ENDIF( APPLE )
 
-target_link_libraries( main ${PCL_LIBRARIES} ${OPENGL_LIBRARY} glfw ${EXTRA_LIBS} )
+target_link_libraries( PCD_Viewer ${PCL_LIBRARIES} ${OPENGL_LIBRARY} glfw ${EXTRA_LIBS} )

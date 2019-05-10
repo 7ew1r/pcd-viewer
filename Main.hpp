@@ -12,5 +12,5 @@
 #define GLFW_INCLUDE_GLU
 #include <GLFW/glfw3.h>
 
-void LoadPCDFile(std::string filename);
+void loadPCDFile(std::string filename);
 void displayPointCloud(pcl::PointCloud<pcl::PointXYZ>::Ptr &cloud);

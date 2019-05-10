@@ -1,4 +1,4 @@
-#include "main.hpp"
+#include "Main.hpp"
 #include "Window.hpp"
 
 std::vector<pcl::PointCloud<pcl::PointXYZ>::Ptr> inputCloud;

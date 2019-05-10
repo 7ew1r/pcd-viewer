@@ -1,16 +1,16 @@
-#include "main.hpp"
+#include "Main.hpp"
 
 extern std::vector<pcl::PointCloud<pcl::PointXYZ>::Ptr> inputCloud;
 
-void LoadPCDFile(std::string filename) {
-  pcl::PointCloud<pcl::PointXYZ>::Ptr input_pcd(
+void loadPCDFile(std::string filename) {
+  pcl::PointCloud<pcl::PointXYZ>::Ptr inputPcd(
       new pcl::PointCloud<pcl::PointXYZ>);
-  if (pcl::io::loadPCDFile<pcl::PointXYZ>(filename, *input_pcd) == -1) {
+  if (pcl::io::loadPCDFile<pcl::PointXYZ>(filename, *inputPcd) == -1) {
     PCL_ERROR("Couldn't read file \n");
   } else {
     std::cout << "Load PCD File : " << filename << std::endl;
     if (inputCloud.empty() == false) inputCloud.erase(inputCloud.begin());
-    inputCloud.push_back(input_pcd);
+    inputCloud.push_back(inputPcd);
   }
 }
 
