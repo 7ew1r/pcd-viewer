@@ -3,7 +3,7 @@ PCD Viewer
 
 A simple PCD (Point Cloud Data) file viewer using glfw.
 
-![image](https://github.com/7ew1r/pcd-viewer/images/image.png)
+![image](https://raw.githubusercontent.com/7ew1r/pcd-viewer/images/image.png)
 
 ## Requirement
 
@@ -12,10 +12,10 @@ A simple PCD (Point Cloud Data) file viewer using glfw.
 
 ## Install
 
-1. Install 3rd-dependencies
+1. Install requirements
 
 ```
-$ sudo apt install libpcl-dev glfw libglfw3-dev
+$ sudo apt install libpcl-dev glfw libglfw3-dev cmake
 ```
 
 2. Clone repository & build
