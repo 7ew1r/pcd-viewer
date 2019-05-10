@@ -16,31 +16,6 @@ void LoadPCDFile(std::string filename){
     }
 }
 
-void PassThroughFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr &cloud, std::string fieldName, float limitsMin, float limitsMax){
-    pcl::PassThrough<pcl::PointXYZ> pass;
-    pass.setInputCloud (cloud);
-    pass.setFilterFieldName (fieldName);
-    pass.setFilterLimits (limitsMin, limitsMax);
-    pass.filter (*cloud);
-}
-
-void VoxelGridFilter(pcl::PointCloud<pcl::PointXYZ>::Ptr &cloud){
-    pcl::ApproximateVoxelGrid<pcl::PointXYZ> approximate_voxel_filter;
-    approximate_voxel_filter.setLeafSize(0.01f, 0.01f, 0.01f);
-    approximate_voxel_filter.setInputCloud(cloud);
-    approximate_voxel_filter.filter(*cloud);
-}
-
-void IterativeClosestPoint(pcl::PointCloud<pcl::PointXYZ>::Ptr &source, pcl::PointCloud<pcl::PointXYZ>::Ptr &target ){
-    pcl::IterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ> icp;
-    icp.setInputSource(source);
-    icp.setInputTarget(target);
-    icp.align(*source);
-    std::cout << "has converged:" << icp.hasConverged() << " score: " <<
-        icp.getFitnessScore() << "\n";
-    std::cout << icp.getFinalTransformation() << "\n";
-}
-
 void DisplayPointCloud(pcl::PointCloud<pcl::PointXYZ>::Ptr &cloud)
 {
     for (size_t i = 0; i < cloud->points.size (); ++i){
@@ -71,12 +46,4 @@ void DisplayPointCloud(const pcl::PointCloud<pcl::PointXYZ>::Ptr &cloud,
     }
 }
 
-pcl::PointCloud<pcl::PointXYZ>::Ptr merge_cloud(pcl::PointCloud<pcl::PointXYZ>::Ptr &cloud1, pcl::PointCloud<pcl::PointXYZ>::Ptr &cloud2)
-{
-    pcl::PointCloud<pcl::PointXYZ> cloud_merged;
-    cloud_merged = *cloud1;
-    cloud_merged += *cloud2;
-
-    return cloud_merged.makeShared();
-}
 

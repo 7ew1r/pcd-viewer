@@ -4,12 +4,7 @@
 extern std::vector< pcl::PointCloud< pcl::PointXYZ>::Ptr > input_cloud;
 extern pcl::PointCloud< pcl::PointXYZ>::Ptr saved_cloud;
 
-
 static double yaw = 0.0, pitch = 0.0, lastX = 0.0, lastY = 0.0; static int ml = 0;
-//static float c_eyeX = 0.0, c_eyeY = 0.0, c_eyeZ = 0.0;
-//static float c_centerX = 0.0, c_centerY = 0.0, c_centerZ = 1.0;
-//static float c_pX = 0.0, c_upY = -1, c_upX = 0.0;
-
 
 extern int isFPS;
 
@@ -63,10 +58,12 @@ public:
                       0, -1, 0);
         }
         glTranslatef(0,0,+0.5f);
-        if(setting == "main") glRotated(0, 1, 0, 0);
-        else glRotated(pitch, 1, 0, 0);
-        if(setting == "main") glRotated(0, 0, 1, 0);
-        else glRotated(yaw, 0, 1, 0);
+        // if(setting == "main") glRotated(0, 1, 0, 0);
+        // else 
+        glRotated(pitch, 1, 0, 0);
+        // if(setting == "main") glRotated(0, 0, 1, 0);
+        // else 
+        glRotated(yaw, 0, 1, 0);
         glTranslatef(0,0,-0.5f);
 
         // We will render our depth data as a set of points in 3D space
