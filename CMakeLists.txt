@@ -3,7 +3,7 @@ cmake_minimum_required( VERSION 2.8 )
 add_executable(${PROJECT_NAME} main.cpp PCL.cpp )
 
 find_package( OpenGL )
-find_package( OpenGL REQUIRED)
+find_package( OpenGL REQUIRED )
 find_package( PCL 1.7 REQUIRED )
 
 include( CheckCXXCompilerFlag )
